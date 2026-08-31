@@ -1,0 +1,35 @@
+name: 自动备份笔记到云盘
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天0点（UTC）自动执行一次
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 触发 Cloudflare Pages 备份接口
+        id: backup
+        run: |
+          response=$(curl -s -w "%{http_code}" -o result.txt -X POST https://notes.zxlwq.dpdns.org/api/backup -H "Content-Type: application/json" -d '{}')
+          echo "HTTP_RESPONSE=$response" >> $GITHUB_ENV
+
+      - name: 检查备份是否成功并发送 TG 通知
+        if: env.HTTP_RESPONSE == '200'
+        env:
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+        run: |
+          MESSAGE="✅ *笔记自动备份成功！*\n🗂️ 时间：$(date -u '+%Y-%m-%d %H:%M:%S UTC')\n🌐 来源：notes.zxlwq.dpdns.org"
+          curl -s -X POST https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage \
+            -d chat_id=${TG_USER_ID} \
+            -d text="$MESSAGE" \
+            -d parse_mode=Markdown
+
+      - name: 推送失败时输出日志
+        if: env.HTTP_RESPONSE != '200'
+        run: |
+          echo "备份接口返回非 200 响应码：" $HTTP_RESPONSE
+          echo "响应内容如下："
+          cat result.txt
