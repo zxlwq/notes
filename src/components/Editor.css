@@ -1,0 +1,212 @@
+#custom-toolbar,
+#custom-toolbar.toolbar-fixed-width,
+#custom-toolbar[style],
+#custom-toolbar[style*='width'],
+#custom-toolbar[style*='auto'] {
+  width: 192px !important;
+  min-width: 192px !important;
+  max-width: 192px !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 768px) {
+  #custom-toolbar,
+  #custom-toolbar.toolbar-fixed-width,
+  #custom-toolbar[style],
+  #custom-toolbar[style*='width'],
+  #custom-toolbar[style*='auto'] {
+    width: 192px !important;
+    min-width: 192px !important;
+    max-width: 192px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+div#custom-toolbar.toolbar-fixed-width {
+  width: 192px !important;
+  min-width: 192px !important;
+  max-width: 192px !important;
+  box-sizing: border-box !important;
+}
+
+div#custom-toolbar[style] {
+  width: 192px !important;
+  min-width: 192px !important;
+  max-width: 192px !important;
+  box-sizing: border-box !important;
+}
+
+html body div#custom-toolbar.toolbar-fixed-width {
+  width: 192px !important;
+  min-width: 192px !important;
+  max-width: 192px !important;
+  box-sizing: border-box !important;
+}
+
+html body div#custom-toolbar[style],
+html body div#custom-toolbar[style*='width'],
+html body div#custom-toolbar[style*='auto'] {
+  width: 192px !important;
+  min-width: 192px !important;
+  max-width: 192px !important;
+  box-sizing: border-box !important;
+}
+
+#custom-toolbar > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+.notes-editor-container {
+  position: relative !important;
+  width: 100%;
+  min-width: 0;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: auto !important;
+}
+
+.notes-editor-container .CodeMirror,
+.notes-editor-container .CodeMirror-scroll,
+.notes-editor-container .CodeMirror-wrap,
+.notes-editor-container .CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden !important;
+}
+
+.notes-editor-container .editor-statusbar {
+  display: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  height: 0 !important;
+  padding: 0 !important;
+}
+
+.notes-editor-container .CodeMirror {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.notes-editor-container .editor-toolbar {
+  border-bottom: none !important;
+}
+
+.notes-editor-container .CodeMirror-hscrollbar,
+.notes-editor-container .CodeMirror-hscrollbar > div {
+  display: none !important;
+  height: 0 !important;
+}
+
+.notes-editor-container .CodeMirror-sizer {
+  min-width: 0 !important;
+}
+
+.notes-editor-container .editor-preview,
+.notes-editor-container .editor-preview-side {
+  overflow-x: hidden !important;
+}
+
+.notes-editor-container .editor-preview mark,
+.notes-editor-container .editor-preview-side mark {
+  background: rgb(250 204 21 / 35%);
+  color: inherit;
+  padding: 0.05em 0.2em;
+  border-radius: 0.2em;
+}
+
+.notes-editor-container .editor-preview u,
+.notes-editor-container .editor-preview-side u {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.notes-editor-container .CodeMirror pre {
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+}
+
+.notes-editor-container .CodeMirror,
+.notes-editor-container .editor-toolbar,
+.notes-editor-container .editor-statusbar {
+  background: transparent !important;
+}
+
+.notes-editor-container .CodeMirror-gutters {
+  background: transparent !important;
+  border: none !important;
+}
+
+.notes-editor-container .CodeMirror .CodeMirror-cursor {
+  border-left: 2px solid #3b82f6 !important;
+  border-right: none !important;
+}
+
+.notes-editor-container .CodeMirror.CodeMirror-focused .CodeMirror-cursor {
+  border-left-width: 3px !important;
+  border-left-color: #2563eb !important;
+}
+
+.notes-editor-container .CodeMirror {
+  color: #1f2937 !important;
+  background: transparent !important;
+  height: auto !important;
+}
+
+.notes-editor-container .CodeMirror-lines {
+  padding: 16px !important;
+}
+
+.notes-editor-container .CodeMirror-scroll {
+  max-height: none !important;
+  overflow-y: auto !important;
+}
+
+.notes-editor-container .CodeMirror .CodeMirror-line {
+  line-height: 1.6 !important;
+  height: auto !important;
+  min-height: 1.6em !important;
+  font-size: var(--editor-font-size, 14px) !important;
+  font-family: var(--editor-font-family, 'Monaco', 'Menlo', 'Ubuntu Mono', monospace) !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+}
+
+.notes-editor-container .CodeMirror .CodeMirror-line span {
+  line-height: 1.6 !important;
+  vertical-align: baseline !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+}
+
+.notes-editor-container .CodeMirror span.cm-comment {
+  color: #fff !important;
+}
+
+.notes-editor-container .CodeMirror-selected,
+.notes-editor-container .CodeMirror-focused .CodeMirror-selected {
+  background: #3b82f6 !important;
+}
+
+.notes-editor-container span.CodeMirror-selectedtext {
+  color: #fff !important;
+}
+
+.notes-editor-container .CodeMirror-line::selection,
+.notes-editor-container .CodeMirror-line > span::selection,
+.notes-editor-container .CodeMirror-line > span > span::selection {
+  background: #3b82f6;
+  color: #fff;
+}
