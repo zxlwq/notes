@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env.local
+.env
+.cursor/
+CF-Functions.log
+浏览器控制台
+AI.md
+txt
+Functions.log
+index-*.js

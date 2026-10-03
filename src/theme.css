@@ -1,0 +1,389 @@
+:root,
+html[data-theme='mist'] {
+  color-scheme: light;
+  --theme-page: #e5e7eb;
+  --theme-wash-from: rgb(243 244 246 / 0.6);
+  --theme-wash-to: rgb(229 231 235 / 0.6);
+  --theme-glass: rgb(255 255 255 / 0.3);
+  --theme-glass-mid: rgb(255 255 255 / 0.5);
+  --theme-glass-strong: rgb(255 255 255 / 0.7);
+  --theme-glass-solid: rgb(255 255 255 / 0.95);
+  --theme-line: rgb(255 255 255 / 0.35);
+  --theme-text: #111827;
+  --theme-text-soft: #374151;
+  --theme-muted: #6b7280;
+  --theme-field: #fff;
+  --theme-field-border: #d1d5db;
+  --theme-accent: #2563eb;
+  --theme-accent-hover: #1d4ed8;
+  --theme-on-accent: #fff;
+  --theme-tag: #fff;
+  --theme-hover: #f3f4f6;
+  --theme-track: #e5e7eb;
+  --theme-code-bg: rgb(213 219 227 / 0.5);
+  --theme-code-border: #c3cad6;
+}
+
+html[data-theme='sakura'] {
+  color-scheme: light;
+  --theme-page: #fdf2f8;
+  --theme-wash-from: #fdf2f8;
+  --theme-wash-to: #fbcfe8;
+  --theme-glass: #fff1f2;
+  --theme-glass-mid: #ffe4e6;
+  --theme-glass-strong: #fff;
+  --theme-glass-solid: #fff;
+  --theme-line: #f9a8d4;
+  --theme-text: #831843;
+  --theme-text-soft: #9d174d;
+  --theme-muted: #be185d;
+  --theme-field: #fff1f2;
+  --theme-field-border: #f9a8d4;
+  --theme-accent: #be185d;
+  --theme-accent-hover: #9d174d;
+  --theme-hover: #fce7f3;
+  --theme-track: #fbcfe8;
+  --theme-code-bg: #f6c9db;
+  --theme-code-border: #f0a8c4;
+}
+
+html[data-theme='black'] {
+  color-scheme: dark;
+  --theme-page: #0a0a0a;
+  --theme-wash-from: #171717;
+  --theme-wash-to: #0a0a0a;
+  --theme-glass: #171717;
+  --theme-glass-mid: #262626;
+  --theme-glass-strong: #262626;
+  --theme-glass-solid: #0a0a0a;
+  --theme-line: #404040;
+  --theme-text: #f5f5f5;
+  --theme-text-soft: #d4d4d4;
+  --theme-muted: #a3a3a3;
+  --theme-field: #0a0a0a;
+  --theme-field-border: #404040;
+  --theme-accent: #e5e5e5;
+  --theme-accent-hover: #fafafa;
+  --theme-on-accent: #0a0a0a;
+  --theme-hover: #262626;
+  --theme-track: #404040;
+  --theme-code-bg: #141414;
+  --theme-code-border: #404040;
+}
+
+html[data-theme='wine'] {
+  color-scheme: dark;
+  --theme-page: #1c0a0c;
+  --theme-wash-from: #3f1219;
+  --theme-wash-to: #1c0a0c;
+  --theme-glass: #3f1219;
+  --theme-glass-mid: #4c151c;
+  --theme-glass-strong: #2a0c10;
+  --theme-glass-solid: #1c0a0c;
+  --theme-line: #7f1d1d;
+  --theme-text: #fee2e2;
+  --theme-text-soft: #fecaca;
+  --theme-muted: #e7b8b8;
+  --theme-field: #1c0a0c;
+  --theme-field-border: #9f1239;
+  --theme-accent: #e11d48;
+  --theme-accent-hover: #fb7185;
+  --theme-hover: #4c151c;
+  --theme-track: #7f1d1d;
+  --theme-code-bg: #120608;
+  --theme-code-border: #7f1d1d;
+}
+
+html[data-theme='pine'] {
+  color-scheme: light;
+  --theme-page: #d1fae5;
+  --theme-wash-from: #d1fae5;
+  --theme-wash-to: #a7f3d0;
+  --theme-glass: #ecfdf5;
+  --theme-glass-mid: #d1fae5;
+  --theme-glass-strong: #f0fdf4;
+  --theme-glass-solid: #fff;
+  --theme-line: #6ee7b7;
+  --theme-text: #14532d;
+  --theme-text-soft: #166534;
+  --theme-muted: #3f6212;
+  --theme-field: #f0fdf4;
+  --theme-field-border: #86efac;
+  --theme-accent: #047857;
+  --theme-accent-hover: #065f46;
+  --theme-hover: #d1fae5;
+  --theme-track: #a7f3d0;
+  --theme-code-bg: #bfe8d4;
+  --theme-code-border: #86efac;
+}
+
+html[data-theme='sand'] {
+  color-scheme: light;
+  --theme-page: #f3e6d4;
+  --theme-wash-from: #f3e6d4;
+  --theme-wash-to: #e7d3b0;
+  --theme-glass: #fff7ed;
+  --theme-glass-mid: #ffedd5;
+  --theme-glass-strong: #fffbeb;
+  --theme-glass-solid: #fffbeb;
+  --theme-line: #fdba74;
+  --theme-text: #44403c;
+  --theme-text-soft: #57534e;
+  --theme-muted: #78716c;
+  --theme-field: #fffbeb;
+  --theme-field-border: #fdba74;
+  --theme-accent: #b45309;
+  --theme-accent-hover: #92400e;
+  --theme-hover: #ffedd5;
+  --theme-track: #fed7aa;
+  --theme-code-bg: #edd4b0;
+  --theme-code-border: #e0b888;
+}
+
+html[data-theme] body {
+  background-color: var(--theme-page);
+}
+
+html[data-theme='sakura'] body,
+html[data-theme='pine'] body,
+html[data-theme='sand'] body,
+html[data-theme='black'] body,
+html[data-theme='wine'] body,
+html[data-theme='sakura'] .min-h-screen,
+html[data-theme='pine'] .min-h-screen,
+html[data-theme='sand'] .min-h-screen,
+html[data-theme='black'] .min-h-screen,
+html[data-theme='wine'] .min-h-screen {
+  background-image: none !important;
+}
+
+html[data-theme='sakura'] [class*='backdrop-blur'],
+html[data-theme='pine'] [class*='backdrop-blur'],
+html[data-theme='sand'] [class*='backdrop-blur'],
+html[data-theme='black'] [class*='backdrop-blur'],
+html[data-theme='wine'] [class*='backdrop-blur'] {
+  backdrop-filter: none;
+}
+
+html[data-theme='sakura'],
+html[data-theme='pine'],
+html[data-theme='sand'] {
+  --theme-tag: var(--theme-text);
+}
+
+html[data-theme='sakura'] .text-white,
+html[data-theme='pine'] .text-white,
+html[data-theme='sand'] .text-white,
+html[data-theme='sakura'] .text-white\/70,
+html[data-theme='pine'] .text-white\/70,
+html[data-theme='sand'] .text-white\/70 {
+  color: var(--theme-text-soft);
+}
+
+html[data-theme='sakura'] .bg-blue-500,
+html[data-theme='sakura'] .bg-blue-600,
+html[data-theme='sakura'] .bg-red-600,
+html[data-theme='sakura'] .bg-green-500,
+html[data-theme='sakura'] .bg-green-600,
+html[data-theme='sakura'] .bg-amber-600,
+html[data-theme='sakura'] .bg-indigo-600,
+html[data-theme='sakura'] .bg-primary-600,
+html[data-theme='pine'] .bg-blue-500,
+html[data-theme='pine'] .bg-blue-600,
+html[data-theme='pine'] .bg-red-600,
+html[data-theme='pine'] .bg-green-500,
+html[data-theme='pine'] .bg-green-600,
+html[data-theme='pine'] .bg-amber-600,
+html[data-theme='pine'] .bg-indigo-600,
+html[data-theme='pine'] .bg-primary-600,
+html[data-theme='sand'] .bg-blue-500,
+html[data-theme='sand'] .bg-blue-600,
+html[data-theme='sand'] .bg-red-600,
+html[data-theme='sand'] .bg-green-500,
+html[data-theme='sand'] .bg-green-600,
+html[data-theme='sand'] .bg-amber-600,
+html[data-theme='sand'] .bg-indigo-600,
+html[data-theme='sand'] .bg-primary-600 {
+  color: #fff;
+}
+
+html[data-theme] * {
+  scrollbar-color: color-mix(in srgb, var(--theme-accent) 55%, transparent) transparent;
+}
+
+html[data-theme] .from-gray-100\/60 {
+  --tw-gradient-from: var(--theme-wash-from) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+html[data-theme] .to-gray-200\/60 {
+  --tw-gradient-to: var(--theme-wash-to) var(--tw-gradient-to-position);
+}
+
+html[data-theme] .bg-white\/5,
+html[data-theme] .bg-white\/10,
+html[data-theme] .bg-white\/20,
+html[data-theme] .bg-white\/30 {
+  background-color: var(--theme-glass);
+}
+
+html[data-theme] .bg-white\/40,
+html[data-theme] .bg-white\/50,
+html[data-theme] .hover\:bg-white\/42:hover {
+  background-color: var(--theme-glass-mid);
+}
+
+html[data-theme] .bg-white\/60,
+html[data-theme] .bg-white\/70,
+html[data-theme] .bg-white\/90 {
+  background-color: var(--theme-glass-strong);
+}
+
+html[data-theme] .bg-white\/95 {
+  background-color: var(--theme-glass-solid);
+}
+
+html[data-theme] .border-white\/20,
+html[data-theme] .border-white\/30,
+html[data-theme] .border-white\/40,
+html[data-theme] .border-white\/50,
+html[data-theme] .border-white\/60,
+html[data-theme] .hover\:border-white\/40:hover {
+  border-color: var(--theme-line);
+}
+
+html[data-theme] .text-gray-900,
+html[data-theme] .text-gray-800,
+html[data-theme] .prose,
+html[data-theme] .prose h1,
+html[data-theme] .prose h2,
+html[data-theme] .prose h3 {
+  color: var(--theme-text);
+}
+
+html[data-theme] .text-gray-700,
+html[data-theme] .text-gray-600,
+html[data-theme] .prose blockquote {
+  color: var(--theme-text-soft);
+}
+
+html[data-theme] .text-gray-500,
+html[data-theme] .text-gray-400 {
+  color: var(--theme-muted);
+}
+
+html[data-theme] .md-body li::marker {
+  color: var(--theme-text);
+}
+
+html[data-theme] .md-body a,
+html[data-theme] .text-blue-600 {
+  color: var(--theme-accent);
+}
+
+html[data-theme] .bg-blue-600,
+html[data-theme] .bg-primary-600 {
+  background-color: var(--theme-accent);
+}
+
+html[data-theme] .hover\:bg-blue-700:hover,
+html[data-theme] .hover\:bg-primary-700:hover {
+  background-color: var(--theme-accent-hover);
+}
+
+html[data-theme] .bg-gray-100,
+html[data-theme] .bg-gray-200,
+html[data-theme] .hover\:bg-gray-50:hover,
+html[data-theme] .hover\:bg-gray-100:hover {
+  background-color: var(--theme-hover);
+}
+
+html[data-theme] .border-gray-200,
+html[data-theme] .border-gray-300,
+html[data-theme] .prose blockquote {
+  border-color: var(--theme-field-border);
+}
+
+html[data-theme] input,
+html[data-theme] select,
+html[data-theme] textarea {
+  background-color: var(--theme-field);
+  color: var(--theme-text);
+}
+
+html[data-theme] .bg-transparent,
+html[data-theme] .title-input,
+html[data-theme] .CodeMirror textarea {
+  background-color: transparent;
+}
+
+html[data-theme] .title-input,
+html[data-theme] .CodeMirror textarea {
+  border-color: transparent;
+}
+
+html[data-theme='mist']
+  input:not(.title-input):not([type='checkbox']):not([type='radio']):not([type='file']),
+html[data-theme='mist'] select,
+html[data-theme='mist'] textarea {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+html:not([data-theme]) #search-input,
+html[data-theme] #search-input,
+html:not([data-theme]) #password,
+html[data-theme] #password {
+  border-color: var(--theme-accent, #2563eb);
+}
+
+html:not([data-theme]) #search-input:not(:focus),
+html[data-theme] #search-input:not(:focus),
+html:not([data-theme]) #password:not(:focus),
+html[data-theme] #password:not(:focus) {
+  border-width: 2px;
+}
+
+html:not([data-theme]) #search-input:focus,
+html[data-theme] #search-input:focus,
+html:not([data-theme]) #password:focus,
+html[data-theme] #password:focus {
+  border-color: var(--theme-accent, #2563eb);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--theme-accent, #2563eb);
+}
+
+html[data-theme] .border-primary-500,
+html:not([data-theme]) .border-primary-500 {
+  border-color: var(--theme-accent, #2563eb);
+}
+
+html[data-theme] .focus\:ring-primary-500:focus,
+html:not([data-theme]) .focus\:ring-primary-500:focus {
+  --tw-ring-color: var(--theme-accent, #2563eb);
+}
+
+html[data-theme] .border-blue-500,
+html:not([data-theme]) .border-blue-500 {
+  border-color: var(--theme-accent, #2563eb);
+}
+
+html[data-theme] .prose :not(pre) > code,
+html[data-theme] .prose pre:not(.md-pre) {
+  background-color: var(--theme-hover);
+  color: var(--theme-text);
+}
+
+html[data-theme='black'] .bg-blue-500,
+html[data-theme='black'] .bg-blue-600,
+html[data-theme='black'] .bg-primary-600 {
+  color: #0a0a0a;
+}
+
+html[data-theme='black'] .notes-editor-container .CodeMirror,
+html[data-theme='wine'] .notes-editor-container .CodeMirror,
+html[data-theme='black'] .notes-editor-container .CodeMirror .cm-variable,
+html[data-theme='wine'] .notes-editor-container .CodeMirror .cm-variable {
+  color: var(--theme-text) !important;
+}

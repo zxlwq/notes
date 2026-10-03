@@ -1,0 +1,77 @@
+name: 使用抱脸创建笔记应用
+
+on:
+  workflow_dispatch:
+    inputs:
+      Token:
+        description: 'Hugging Face Token（需要写权限）'
+        required: true
+      image:
+        description: 'Docker 镜像地址'
+        required: false
+        default: ''
+      password:
+        description: '管理员密码'
+        required: true
+      jwt_secret:
+        description: 'JWT 签名密钥（独立随机串，勿与登录密码相同）'
+        required: true
+      neon_url:
+        description: 'Neon 数据库连接字符串'
+        required: true
+      webdav_config:
+        description: 'WebDAV配置格式: (URL|用户名|密码，用|分隔)'
+        required: false
+        default: ''
+      r2_config:
+        description: 'R2配置格式: (账户ID|访问密钥ID|秘密访问密钥，用|分隔)'
+        required: false
+        default: ''
+      git_token:
+        description: 'GitHub Token'
+        required: false
+        default: ''
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 隐藏输入信息
+        uses: levibostian/action-hide-sensitive-inputs@v1
+
+      - name: 安装 Python 依赖
+        run: |
+          python -m pip install --upgrade pip wheel
+          pip install huggingface_hub
+
+      - name: 运行脚本
+        run: |
+          WEBDAV_CONFIG="${{ github.event.inputs.webdav_config }}"
+          WEBDAV_URL=$(echo "$WEBDAV_CONFIG" | cut -d'|' -f1)
+          WEBDAV_USER=$(echo "$WEBDAV_CONFIG" | cut -d'|' -f2)
+          WEBDAV_PASS=$(echo "$WEBDAV_CONFIG" | cut -d'|' -f3)
+
+          R2_CONFIG="${{ github.event.inputs.r2_config }}"
+          ACCOUNT_ID=$(echo "$R2_CONFIG" | cut -d'|' -f1)
+          ACCESS_KEY_ID=$(echo "$R2_CONFIG" | cut -d'|' -f2)
+          SECRET_ACCESS_KEY=$(echo "$R2_CONFIG" | cut -d'|' -f3)
+
+          python notes.py \
+            --token "${{ github.event.inputs.Token }}" \
+            --image "${{ github.event.inputs.image }}" \
+            --password "${{ github.event.inputs.password }}" \
+            --jwt-secret "${{ github.event.inputs.jwt_secret }}" \
+            --neon-url "${{ github.event.inputs.neon_url }}" \
+            --webdav-url "$WEBDAV_URL" \
+            --webdav-user "$WEBDAV_USER" \
+            --webdav-pass "$WEBDAV_PASS" \
+            --account-id "$ACCOUNT_ID" \
+            --access-key-id "$ACCESS_KEY_ID" \
+            --secret-access-key "$SECRET_ACCESS_KEY" \
+            --git-token "${{ github.event.inputs.git_token }}"
