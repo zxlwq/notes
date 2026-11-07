@@ -1,0 +1,26 @@
+/** @type {import('stylelint').Config} */
+export default {
+  extends: ['stylelint-config-standard', 'stylelint-config-tailwindcss'],
+  ignoreFiles: ['dist/**', 'node_modules/**', 'build/**'],
+  rules: {
+    'at-rule-no-unknown': null,
+    'function-no-unknown': null,
+    'selector-class-pattern': null,
+    'custom-property-pattern': null,
+    'no-descending-specificity': null,
+    'declaration-no-important': null,
+    'rule-empty-line-before': null,
+    'declaration-empty-line-before': null,
+    'comment-empty-line-before': null,
+    'custom-property-empty-line-before': null,
+    'at-rule-empty-line-before': null,
+    'color-function-notation': null,
+    'alpha-value-notation': null,
+    'import-notation': null,
+    'selector-not-notation': null,
+    'media-feature-range-notation': null,
+    'declaration-block-no-redundant-longhand-properties': null,
+    'property-no-deprecated': null,
+    'no-duplicate-selectors': null,
+  },
+}

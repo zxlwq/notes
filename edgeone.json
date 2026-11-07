@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "name": "notes",
+  "public": true,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/edge-functions/api/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico",
+      "headers": {
+        "Cache-Control": "public, max-age=315360000, immutable",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "image/x-icon",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' https://umami.zxlwq.dpdns.org https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://umami.zxlwq.dpdns.org https://cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      }
+    },
+    {
+      "src": "/background.webp",
+      "dest": "/background.webp",
+      "headers": {
+        "Cache-Control": "public, max-age=315360000, immutable",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "image/webp",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' https://umami.zxlwq.dpdns.org https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://umami.zxlwq.dpdns.org https://cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' https://umami.zxlwq.dpdns.org https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://umami.zxlwq.dpdns.org https://cloudflareinsights.com; font-src 'self' data: https://fonts.gstatic.com; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      }
+    }
+  ],
+  "functions": {
+    "edge-functions/api/login.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/notes.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/notes/[id].js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/password/status.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/logs.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/cron/logs.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/import.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/backup.js": {
+      "maxDuration": 30
+    },
+    "edge-functions/api/order/[key].js": {
+      "maxDuration": 30
+    }
+  },
+  "schedules": [
+    {
+      "name": "prune-old-logs",
+      "cron": "0 3 * * *",
+      "path": "/api/cron/logs",
+      "method": "POST",
+      "timezone": "UTC"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "framework": "vite"
+}
